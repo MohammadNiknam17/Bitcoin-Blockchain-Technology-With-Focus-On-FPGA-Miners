@@ -1,0 +1,8 @@
+1.	A. Narayanan, J. Bonneau, E. Felten, A. Miller, and S. Goldfeder. "Bitcoin And Cryptocurrency Technologies". Princeton University:
+https://www.coursera.org/learn/cryptocurrency
+
+2.	E. Demaine, S. Devadas, and N. Lynch. "6.046J Design and Analysis of Algorithms". Massachusetts Institute of Technology: MIT. 2015. OpenCourseWare:
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/
+
+3.	G. Gensler. "15.S12 Blockchain and Money". Massachusetts Institute of Technology: MIT. 2018. OpenCourseWare:
+https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/
