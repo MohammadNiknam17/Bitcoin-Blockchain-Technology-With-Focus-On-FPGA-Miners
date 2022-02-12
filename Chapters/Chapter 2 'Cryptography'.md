@@ -80,7 +80,7 @@ r: مقداری تصادفی و مخفی است که در رمزنگاری به 
 
 ![- Figure 3دوره زمانی بکارگیری رایج‌ترین توابع هش و وضعیت آن‌ها 1990-2017](media/fig.3.png)
 
-\- Figure 3[دوره زمانی بکارگیری رایج‌ترین توابع هش و وضعیت آن‌ها 1990-2017]{dir="rtl"}
+Figure 3 - دوره زمانی بکارگیری رایج‌ترین توابع هش و وضعیت آن‌ها 1990-2017
 
 Many hash functions exist, but this is the one Bitcoin uses primarily, and it's a pretty good one to use. It's called SHA-256 from SHA-2 family. Recall that we require that our hash functions work on inputs of arbitrary length. Luckily, as long as we can build a hash function that works on fixed‐length inputs, there's a generic method to convert it into a hash function that works on arbitrary length inputs. It's called the ***Merkle‐Damgard transform***. SHA‐256 is one of a number of commonly used hash functions that make use of this method. In common terminology, the underlying fixed‐length collision‐resistant hash function is called the ***compression function***. It has been proven that if the underlying compression function is collision resistant, then the overall hash function is collision resistant as well.
 
@@ -129,6 +129,11 @@ First, the message is padded with a binary '1' then it is cut into blocks of 512
 
 padding is always done, even if the message happens to be a multiple of the input block size. If padding is not always done, there is an easy hash collision, a message will have the same hash as that message with the pad appended.
 
+
+---
+
+
+
 ## 2.2-HASH POINTERS AND DATA STRUCTURES
 
 In this section, we'll discuss ways of using hash functions to build more complicated data structures that are used in distributed systems like Bitcoin. we're going to discuss ***hash pointers*** and their applications.
@@ -137,7 +142,9 @@ In this section, we'll discuss ways of using hash functions to build more compli
 
 A hash pointer is a data structure that is simply a pointer to where some information is stored together with a cryptographic hash of the value of that data at some fixed point in time. Whereas a regular pointer gives you a way to retrieve the information, a hash pointer also gives you a way to verify that the information hasn't changed.
 
-![Figure 7 - A hash pointer.](media/fig.7.png)Figure 7 - A hash pointer.
+![Figure 7 - A hash pointer.](media/fig.7.png)
+
+Figure 7 - A hash pointer.
 
 ### Block chain
 
@@ -172,6 +179,7 @@ Another nice feature of Merkle trees is that, unlike the block chain that we bui
 See Figure below for a graphical depiction of how proof of membership in Merkle Tree works.
 
 ![Figure 11 - Proof of membership. To prove that a data block is included in the tree, one only needs to show the blocks in the path from that data block to the root.](media/fig.11.png)
+
 Figure 11 - Proof of membership. To prove that a data block is included in the tree, one only needs to show the blocks in the path from that data block to the root.
 
 If there are *n* nodes in the tree, only about *log(n)* items need to be shown. And since each step just requires computing the hash of the child block, it takes about *log(n)* time for us to verify it. And so even if the Merkle tree contains a very large number of blocks, we can still prove membership in a relatively short time. Verification thus runs in time and space that's logarithmic in the number of nodes in the tree.
@@ -181,6 +189,10 @@ If there are *n* nodes in the tree, only about *log(n)* items need to be shown. 
 A ***sorted Merkle tree*** is just a Merkle tree where we take the blocks at the bottom, and we sort them using some ordering function. This can be alphabetical, lexicographical order, numerical order, or some other agreed upon ordering.
 
 With a sorted Merkle tree, it becomes possible to verify non‐membership in a logarithmic time and space. That is, we can prove that a particular block is not in the Merkle tree. And the way we do that is simply by showing a path to the item that's just before where the item in question would be and showing the path to the item that is just after where it would be. If these two items are consecutive in the tree, then this serves as a proof that the item in question is not included. For if it was included, it would need to be between the two items shown, but there is no space between them as they are consecutive.
+
+
+---
+
 
 ## 2.3-DIGITAL SIGNATURES
 
@@ -195,6 +207,7 @@ A digital signature scheme consists of the following three algorithms:
 - **Signature verification:** **isvalid := verify( *pk* , *message* , *sig* )** The verify method takes a message, a signature, and a public key as input. It returns a boolean value, *isvalid,* that will be ***true*** if *sig* is a valid signature for *message* under public key *pk*, and ***false*** otherwise.
 
 ![Figure 12 - Digital signature processes](media/fig.12.png)
+
 Figure 12 - Digital signature processes
 
 A digital signature algorithm includes a signature generation process and a signature verification process. A signatory uses the generation process to generate a digital signature on data; a verifier uses the verification process to verify the authenticity of the signature. Each signatory has a public and private key and is the owner of that key pair. the private key is used in the signature generation process. The key pair owner is the only entity that is authorized to use the private key to generate digital signatures. In order to prevent other entities from using the private key to generate fraudulent signatures, the private key must remain secret. The approved digital signature algorithms are designed to prevent an adversary who does not know the signatory’s private key from generating the same signature as the signatory on a different message. The public key is used in the signature verification process. The public key need not be kept secret, anyone can verify a correctly signed message using the public key.
@@ -220,6 +233,7 @@ More specifically, Bitcoin uses ECDSA over the standard elliptic curve "secp256k
 It might be useful to have an idea of the sizes of various quantities in ECDSA:
 
 ![Figure 13 - sizes of various quantities in ECDSA](media/fig.13.png)
+
 Figure 13 - sizes of various quantities in ECDSA
 
 Note that while ECDSA can technically only sign messages 256 bits long, this is not a problem: messages are always hashed before being signed, so effectively any size message can be efficiently signed. Also, you can sign a hash pointer. If you sign a hash pointer, then the signature covers, or protects, the whole structure and everything the chain of hash pointers points to. For example, if you were to sign the hash pointer that was at the end of a block chain, the result is that you would effectively be digitally signing the that entire block chain.
@@ -236,3 +250,5 @@ This brings us to the idea of decentralized identity management. Rather than hav
 
 ![Figure 14 - Conversion from private key to Bitcoin Address](media/fig.14.png)
 Figure 14 - Conversion from private key to Bitcoin Address
+
+By [Mohammad Niknam](https://github.com/MohammadNiknam17)
