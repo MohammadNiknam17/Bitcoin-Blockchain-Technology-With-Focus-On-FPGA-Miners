@@ -203,7 +203,7 @@ In this section, we'll look at ***digital signatures.*** This is the second cryp
 A digital signature scheme consists of the following three algorithms:
 
 - **keys generation: (sk, pk) := generatekeys( *keysize* )** The generatekeys method takes a key size and generates a key pair. The private key or secret key *sk* is kept privately and used to sign messages. *Pk* is the public verification key that you give to everybody. Anyone with this key can verify your signature.
-- **Signature generation: sig := sign( *sk* , *message* )** The sign method takes a message and a secret key, *sk*, as input and outputs a signature for *message* under *sk*
+- **Signature generation: sig := sign( *sk* , *message* )** The sign method takes a message and a secret key, *sk*, as input and outputs a signature for *message* under *sk.*
 - **Signature verification:** **isvalid := verify( *pk* , *message* , *sig* )** The verify method takes a message, a signature, and a public key as input. It returns a boolean value, *isvalid,* that will be ***true*** if *sig* is a valid signature for *message* under public key *pk*, and ***false*** otherwise.
 
 ![Figure 12 - Digital signature processes](media/fig.12.png)
