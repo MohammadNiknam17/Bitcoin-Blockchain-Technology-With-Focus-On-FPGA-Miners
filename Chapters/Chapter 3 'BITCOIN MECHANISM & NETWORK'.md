@@ -43,6 +43,7 @@ We need a way for the payee to know that the previous owners did not sign any ea
 The solution which Nakamoto proposed begins with a timestamp server. A timestamp server works by taking a hash of a block of items to be timestamped and widely publishing the hash. Each timestamp includes the previous timestamp in its hash, forming a chain, with each additional timestamp reinforcing the ones before it.
 
 ![Figure 16 - Taking a hash of a block of items and hash of previous timestamp to be timestamped.](media/fig.16.png)
+
 Figure 16 - Taking a hash of a block of items and hash of previous timestamp to be timestamped.
 
 ### Proof-of-Work
