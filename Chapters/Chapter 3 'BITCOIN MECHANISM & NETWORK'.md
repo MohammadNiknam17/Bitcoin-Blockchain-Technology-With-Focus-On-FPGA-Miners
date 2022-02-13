@@ -102,6 +102,11 @@ The traditional banking model achieves a level of privacy by limiting access to 
 
 Figure 18 - Traditional-Privacy-Model Vs New-Privacy-Model
 
+
+---
+
+
+
 ## 3.3-Bitcoin blockchain data structure
 
 An overview of the Bitcoin blockchain data structure is depicted in Figure below. To be stored in the Bitcoin ledger, every individual transaction should be embedded in a Bitcoin block data structure. the Bitcoin blockchain is a sequence of blocks linked with hash values. Each block consists of a block header and a block body. Transactions are stored in the block body, and digest information and other identifiers are recorded in the block header. A blockchain is maintained by the nodes participating in the network, and the data consistency among the nodes is ensured according to predetermined rules of Consensus.
@@ -117,7 +122,6 @@ A block is "solved" (published and considered valid by peers) when the hash of t
 ![Figure 20 - The Block header fields and structure, The block header is an 80-byte value.](media/fig.20.png)
 
 Figure 20 - The Block header fields and structure, The block header is an 80-byte value.
-
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
