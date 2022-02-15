@@ -58,7 +58,7 @@ Figure 23 - summary information of first block mined in 2022.
 
 For this block, as of January 2022, figure below shows how to decode the target \"bits\" and determine the mining difficulty.
 
-![Figure 24 - decode the target <span data-type=](media/fig.24.png)\"bits\" and determining prosses for the mining difficulty and target." />
+![Figure 24 - decode the target <span data-type=](media/fig.24.png)
 
 Figure 24 - decode the target \"bits\" and determining prosses for the mining difficulty and target.
 
