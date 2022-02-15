@@ -103,10 +103,7 @@ The traditional banking model achieves a level of privacy by limiting access to 
 
 Figure 18 - Traditional-Privacy-Model Vs New-Privacy-Model
 
-
 ---
-
-
 
 ## 3.3-Bitcoin blockchain data structure
 
@@ -124,14 +121,12 @@ A block is "solved" (published and considered valid by peers) when the hash of t
 
 Figure 20 - The Block header fields and structure, The block header is an 80-byte value.
 
+---
+
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
-[^1]: This concept will discuss with more details in next section,
-       titled by \"Difficulty\".
+[^1]: *This concept will discuss with more details in next section, titled by \"Difficulty\".*
     
-[^2]: The total supply of BTC is limited and pre-defined in the Bitcoin
-       protocol at 21-million. Since 2009 to early 2022, approximately
-       18.9-milion of it mined (have entered circulation with the mining
-       reward).
+[^2]: *The total supply of BTC is limited and pre-defined in the Bitcoin protocol at 21-million. Since 2009 to early 2022 approximately 18.9-milion of it mined (have entered circulation with the mining reward).*
     
-[^3]: This subject will discuss in next section, with more details.
+[^3]: *This subject will discuss in next section, with more details.*

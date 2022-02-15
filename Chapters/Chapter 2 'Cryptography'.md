@@ -102,13 +102,13 @@ The mixing is done in such a way that full ""avalanche effect" is achieved.
 
 #### Initialization Vector (IV), (Initial Hash Value)
 
-\"IV\"[، \"مقدار اولیه]{dir="rtl"}\"[، یا]{dir="rtl"} \"[بردار اولیه]{dir="rtl"}\"[، یک مقدار]{dir="rtl"}256-bit [به عنوان مقدار اولیه تابع هش]{dir="rtl"} sha-256 [میباشد، که به همراه اولین بلاک]{dir="rtl"} 512-bit [از پیام، ورودی های اولین تابع فشرده سازی هستند]{dir="rtl"}. []{dir="rtl"}IV[، شامل هشت کلمه]{dir="rtl"} 32-bit [میشود که به عنوان]{dir="rtl"} Constant [در هر بار محاسبه]{dir="rtl"} sha-256 [به کار می رود. این مقادیر ثابت، در اسناد استاندارد مربوطه میتوان یافت.]{dir="rtl"} [در شکل زیر مقادیر]{dir="rtl"} IV [(در نمایش]{dir="rtl"}hex[)]{dir="rtl"} [آورده شده است]{dir="rtl"}.
+\"IV\"[، \"مقدار اولیه]{dir="rtl"}\"[، یا]{dir="rtl"} \"[بردار اولیه]{dir="rtl"}\"[، یک مقدار]{dir="rtl"}256-bit [به عنوان مقدار اولیه تابع هش]{dir="rtl"} sha-256 [میباشد، که به همراه اولین بلاک]{dir="rtl"} 512-bit [از پیام، ورودی های اولین تابع فشرده سازی هستند]{dir="rtl"}. IV[، شامل هشت کلمه]{dir="rtl"} 32-bit [میشود که به عنوان]{dir="rtl"} Constant [در هر بار محاسبه]{dir="rtl"} sha-256 [به کار می رود. این مقادیر ثابت، در اسناد استاندارد مربوطه میتوان یافت.]{dir="rtl"} [در شکل زیر مقادیر]{dir="rtl"} IV [(در نمایش]{dir="rtl"}hex[)]{dir="rtl"} [آورده شده است]{dir="rtl"}.
 
 ![Figure 5 - مقادیر ثابت](media/fig.5.png)
 
 Figure 5 - مقادیر ثابت"IV" شامل هشت کلمه(در نمایشhex) ، ثبت شده در اسناد استاندارد sha-256
 
-These words were obtained by taking the first thirty-two bits of the fractional parts of the square []{dir="rtl"}roots of the first eight prime numbers.
+These words were obtained by taking the first thirty-two bits of the fractional parts of the square roots of the first eight prime numbers.
 
 #### Merkle--Damgard Strengthening & Padding
 
@@ -245,5 +245,7 @@ This brings us to the idea of decentralized identity management. Rather than hav
 
 ![Figure 14 - Conversion from private key to Bitcoin Address](media/fig.14.png)
 Figure 14 - Conversion from private key to Bitcoin Address
+
+---
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
