@@ -66,7 +66,7 @@ The value in0 to in3 are used to determine which SRAM bit is given at output. Bo
 
 Interconnect is used for communicate between different logic island (LIs) these interconnects are configurable. It consists of horizontal and vertical channels (bundle of wire). At interconnect of routing channel there is a programmable links which determine how wire is connected, how input output is routed in particular logic island. All wires are connected to additional three wires at interconnection point but which connection is active is determine by programmable switch.
 
-![Figure 36 - (left) Routing architecture with switch matrix - (right) SRAM-controlled Programmable Switches](media/fig.6.png)
+![Figure 36 - (left) Routing architecture with switch matrix - (right) SRAM-controlled Programmable Switches](media/fig.36.png)
 
 Figure 36 - (left) Routing architecture with switch matrix - (right) SRAM-controlled Programmable Switches
 
