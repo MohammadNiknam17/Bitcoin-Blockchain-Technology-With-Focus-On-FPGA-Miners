@@ -26,13 +26,13 @@ Formally:
 
 ![Figure 1. A hash collision. x and y are distinct values, yet wheninput into hash function H, they produce the sameoutput.](media/fig.1.png)
 
-Figure 1. A hash collision. x and y are distinct values, yet when input into hash function H, they produce the same output.
+Figure 1 - A hash collision. x and y are distinct values, yet when input into hash function H, they produce the same output.
 
 Notice that we said “nobody can find” a collision, but we did not say that no collisions exist. Actually, collisions exist for any hash function, and we can prove this by a simple counting argument. The input space to the hash function contains all strings of all lengths, yet the output space contains only strings of a specific fixed length. Because the input space is larger than the output space (indeed, the input space is infinite, while the output space is finite), there must be input strings that map to the same output string. In fact, there will be some outputs to which an infinite number of possible inputs will map.
 
 ![Figure 2. Inevitability of collisions. Because the number of inputs exceeds the number of outputs, we are guaranteed that there must be at least one output to which the hash function maps more than one input.](media/fig.2.png)
 
-Figure 2. Inevitability of collisions. Because the number of inputs exceeds the number of outputs, we are guaranteed that there must be at least one output to which the hash function maps more than one input.
+Figure 2 - Inevitability of collisions. Because the number of inputs exceeds the number of outputs, we are guaranteed that there must be at least one output to which the hash function maps more than one input.
 
 Now, to make things even worse, we said that it has to be impossible to find a collision. Yet, there are methods that are guaranteed to find a collision. Consider the following simple method for finding a collision for a hash function with a 256‐bit output size: pick $2^{256} + 1$ distinct values, compute the hashes of each of them, and check if there are any two outputs are equal. Since we picked more inputs than possible outputs, some pair of them must collide when you apply the hash function. The method above is guaranteed to find a collision. But if we pick random inputs and compute the hash values, we'll find a collision with high probability long before examining $2^{256} + 1$inputs. In fact, if we randomly choose just $2^{130} + 1$ inputs, it turns out there's a 99.8% chance that at least two of them are going to collide.
 
@@ -90,7 +90,7 @@ SHA‐256 uses a compression function that takes 768‐bit input and produces 25
 
 ![Figure 4: SHA‐256 Hash Function (simplified). SHA‐256 uses the Merkle‐Damgard transform to turn a fixed‐length collision‐resistant compression function into a hash function that accepts arbitrary‐length inputs. The input is ](media/fig.4.png)
 
-Figure 4: SHA‐256 Hash Function (simplified). SHA‐256 uses the Merkle‐Damgard transform to turn a fixed length collision‐resistant compression function into a hash function that accepts arbitrary‐length inputs. The input is "padded" so that its length is a multiple of 512 bits.
+Figure 4 - SHA‐256 Hash Function (simplified). SHA‐256 uses the Merkle‐Damgard transform to turn a fixed length collision‐resistant compression function into a hash function that accepts arbitrary‐length inputs. The input is "padded" so that its length is a multiple of 512 bits.
 
 #### Compression Function - One-Way Function
 
