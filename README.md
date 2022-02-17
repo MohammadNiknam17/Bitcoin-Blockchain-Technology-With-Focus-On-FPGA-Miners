@@ -26,26 +26,22 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
 
 ## Table of Contents
 
-#### [1-INTRODUCTION](chapters/Chapter 1 'Introduction'.md)
-
-#### [2-CRYPTOGRAPHY](chapters/Chapter 2 'Cryptography'.md)
-
+#### [1-INTRODUCTION](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%201%20'Introduction'.md)
+#### [2-CRYPTOGRAPHY](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%202%20'Cryptography'.md)
     2.1-Cryptographic Hash Functions
         Property 1: Collision Resistance
         Property 2: Hiding - Preimage resistance (one wayness)
         Property 3: Puzzle Friendliness - Target Collision Resistance
         SHA-256
     2.2-HASH POINTERS AND DATA STRUCTURES
-        Hash pointer
-        Block chain
-        Merkle tree
+       Hash pointer
+       Block chain
+       Merkle tree
     2.3-DIGITAL SIGNATURES
-        Digital signature scheme
-        ECDSA
-        Public Keys as Identities
-
-#### [3-BITCOIN MECHANISM & NETWORK](chapters/Chapter 3 'Bitcoin Mechanism & Network'.md)
-
+       Digital signature scheme
+       ECDSA
+       Public Keys as Identities
+#### [3-BITCOIN MECHANISM & NETWORK](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%203%20'Bitcoin%20Mechanism%20%26%20Network'.md)
     3.1-Bitcoin in use
     3.2-Bitcoin Concepts
         Transactions
@@ -56,9 +52,7 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
         Privacy
     3.3-Bitcoin blockchain data structure
         Block Header
-
-#### [4-BITCOIN MINING](chapters/Chapter 4 'Bitcoin Mining'.md)
-
+#### [4-BITCOIN MINING](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%204%20'Bitcoin%20Mining'.md)
     4.1-The task of Bitcoin miners
         Finding a valid block
         Difficulty
@@ -68,9 +62,7 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
     GPU mining
     FPGA mining
     ASIC mining
-
-#### [5-FPGA](chapters/Chapter 5 'FPGA'.md)
-
+#### [5-FPGA](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%205%20'FPGA'.md)
     5.1-Introduction
         Requirement of FPGAs
     5.2-Architecture and Structure of FPGA
@@ -87,10 +79,8 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
     5.5-FPGA As Bitcoin Miner
         FPGA mining versus GPU and CPU and ASIC mining
         Profitability of FPGA mining
-
-#### [6-CONCLUSION](chapters/Chapter 6 'Conclusion'.md)
-
-    Professional mining
+#### [6-CONCLUSION](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/Chapter%206%20'Conclusion'.md)
+        Professional mining
         Mining hardware evolution: Similarities to gold mining
         A look to the future - The cycle repeats itself
 
@@ -99,5 +89,5 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
 
 
 
-[MOHAMMAD NIKNAM](https://github.com/MohammadNiknam17)
+By [MOHAMMAD NIKNAM](https://github.com/MohammadNiknam17)
 2021-2022
