@@ -78,9 +78,9 @@ r: مقداری تصادفی و مخفی است که در رمزنگاری به 
 
 ### SHA-256
 
-![- Figure 3دوره زمانی بکارگیری رایج‌ترین توابع هش و وضعیت آن‌ها 1990-2017](media/fig.3.png)
+![Figure 3 - Lifetimes and states of most common cryptographic hash algorithms. 1990-2017](media/fig.3.png)
 
-Figure 3 - دوره زمانی بکارگیری رایج‌ترین توابع هش و وضعیت آن‌ها 1990-2017
+Figure 3 - Lifetimes and states of most common cryptographic hash algorithms. 1990-2017
 
 Many hash functions exist, but this is the one Bitcoin uses primarily, and it's a pretty good one to use. It's called SHA-256 from SHA-2 family. Recall that we require that our hash functions work on inputs of arbitrary length. Luckily, as long as we can build a hash function that works on fixed‐length inputs, there's a generic method to convert it into a hash function that works on arbitrary length inputs. It's called the ***Merkle‐Damgard transform***. SHA‐256 is one of a number of commonly used hash functions that make use of this method. In common terminology, the underlying fixed‐length collision‐resistant hash function is called the ***compression function***. It has been proven that if the underlying compression function is collision resistant, then the overall hash function is collision resistant as well.
 
@@ -95,18 +95,16 @@ Figure 4 - SHA‐256 Hash Function (simplified). SHA‐256 uses the Merkle‐Dam
 #### Compression Function - One-Way Function
 
 **one-way compression function** is a function that transforms and mixestwo fixed length inputs and produces a single fixed length output of the same size as one of the inputs. This can also be seen as that the compression function transforms one large fixed-length input into a shorter, fixed-length output. The transformation is "one-way", meaning that it is difficult given a particular output to compute inputs which compress to that output. One-way compression functions are not related to conventional data compression algorithms, which instead can be inverted exactly (lossless compression) or approximately (lossy compression) to the original data.
+The mixing is done in such a way that full ""avalanche effect[^1]" is achieved.
 
-The mixing is done in such a way that full ""avalanche effect" is achieved.
-
-[که این اثر بیانگر آن است که همه بیت های خروجی به تک تک بیت های ورودی وابسته است و هر گونه تغییر کوچکی در ورودی (تغییر حتی یک بیت) تاثیر قابل توجه و تصادفی در خروجی می گذارد. که این اثر در واقع همان ویژگی \"نداشتن پیش زمینه ذهنی\" از ورودی یا \"مخفی سازی\" را برای ما فراهم می کند]{dir="rtl"}.
 
 #### Initialization Vector (IV), (Initial Hash Value)
 
-\"IV\"[، \"مقدار اولیه]{dir="rtl"}\"[، یا]{dir="rtl"} \"[بردار اولیه]{dir="rtl"}\"[، یک مقدار]{dir="rtl"}256-bit [به عنوان مقدار اولیه تابع هش]{dir="rtl"} sha-256 [میباشد، که به همراه اولین بلاک]{dir="rtl"} 512-bit [از پیام، ورودی های اولین تابع فشرده سازی هستند]{dir="rtl"}. IV[، شامل هشت کلمه]{dir="rtl"} 32-bit [میشود که به عنوان]{dir="rtl"} Constant [در هر بار محاسبه]{dir="rtl"} sha-256 [به کار می رود. این مقادیر ثابت، در اسناد استاندارد مربوطه میتوان یافت.]{dir="rtl"} [در شکل زیر مقادیر]{dir="rtl"} IV [(در نمایش]{dir="rtl"}hex[)]{dir="rtl"} [آورده شده است]{dir="rtl"}.
+Initialization Vector (IV), is a 256-bit value, as the initial hash value for SHA-256 hash function. "IV" with the first 512-bit block of message, are inputs of the first compression function. "IV", as a constant value, consists of eight 32-bit word, which are reused for every call to the SHA-256 hash function. figure below shows "IV" value in Hexadecimal-representation.
 
-![Figure 5 - مقادیر ثابت](media/fig.5.png)
+![Figure 5  - ](media/fig.5.png)
 
-Figure 5 - مقادیر ثابت"IV" شامل هشت کلمه(در نمایشhex) ، ثبت شده در اسناد استاندارد sha-256
+Figure 5  - "Initialization Vector", a constant value, consist of eight 32-bit word (in Hex). Recorded in SHA-256 standard.
 
 These words were obtained by taking the first thirty-two bits of the fractional parts of the square roots of the first eight prime numbers.
 
@@ -121,9 +119,9 @@ length field at the end of the padding, which is the length of the
 message in bits(binary). And then before that, a one bit, followed by
 some number of zero bits.
 
-![Figure 6 نحوه Padding بلاک آخرsha-256 در ساختار Merkle-Damgard strengthening](media/fig.6.png)
+![Figure 6 - Merkle-Damgard Strengthening & Padding to SHA-256 algorithm.](media/fig.6.png)
 
-Figure 6 نحوه Padding بلاک آخرsha-256 در ساختار Merkle-Damgard strengthening
+Figure 6 - Merkle-Damgard Strengthening & Padding to SHA-256 algorithm.
 
 First, the message is padded with a binary '1' then it is cut into blocks of 512 bits. If the length of the last block does not exceed 448 bits, as many zeros as necessary are appended to fill 448 bits and the binary length of the original message (before padding) is appended in the last 64 bits of the block to form a 512bit block. Else, the block is filled with zeros up to a length of 512 bits, and an extra block is appended filled with 448 zeros; again, the binary length of the original message is appended in the last 64 bits to form a complete 512-bit block. So, once you\'ve padded the message such that, its length is exactly a multiple of the 512-bit block size. This form of padding is non-ambiguous and is an example of a valid Merkle-Damgard strengthening.
 
@@ -170,9 +168,6 @@ Figure 10 - **Merkle tree.** In a Merkle tree, data blocks are grouped in pairs 
 #### Application1: proof of membership
 
 Another nice feature of Merkle trees is that, unlike the block chain that we built before, it allows a concise proof of membership. Say that someone wants to prove that a certain data block is a member of the Merkle Tree. As usual, we remember just the root. Then they need to show us this data block, and the blocks on the path from the data block to the root. We can ignore the rest of the tree, as the blocks on this path are enough to allow us to verify the hashes all the way up to the root of the tree.
-
-[در حالی که در بلاک چین، چنین امکانی فراهم نبود. چرا که، جهت چک کردن وجود دیتایی خاص در بلاک ها، نیاز به در اختیار داشتن: سایر دیتای همان بلاک، تمامی دیتای بلاک های بعد و هش پوینتر بلاک قبل است و همچنین تمام محاسبات میبایست کاملا تکرار شود.
-
 See Figure below for a graphical depiction of how proof of membership in Merkle Tree works.
 
 ![Figure 11 - Proof of membership. To prove that a data block is included in the tree, one only needs to show the blocks in the path from that data block to the root.](media/fig.11.png)
@@ -180,6 +175,8 @@ See Figure below for a graphical depiction of how proof of membership in Merkle 
 Figure 11 - Proof of membership. To prove that a data block is included in the tree, one only needs to show the blocks in the path from that data block to the root.
 
 If there are *n* nodes in the tree, only about *log(n)* items need to be shown. And since each step just requires computing the hash of the child block, it takes about *log(n)* time for us to verify it. And so even if the Merkle tree contains a very large number of blocks, we can still prove membership in a relatively short time. Verification thus runs in time and space that's logarithmic in the number of nodes in the tree.
+
+while, in the blockchain data structure, in order to check the membership of a certain data in the blocks, we need to have: other complementary data of same block, all the data from later blocks, and at least hash-pointer of the previous block. Also, all the calculation on the blocks most be repeated. if we concluded the hash-pointer of the latest block, as same as the hash-pointer that we stored before, then we find the proof of membership.
 
 #### Application2: proof of non‐membership - Variant: sorted Merkle tree
 
@@ -249,3 +246,5 @@ Figure 14 - Conversion from private key to Bitcoin Address
 ---
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
+
+[^1]: *Avalanche effect, is a term associated with a specific behavior of mathematical cryptographic functions. Which is: all the bits of function's output depend on every bit of input. In other word, A slight change in input (even change in one bit) should result a significant random change in output. Indeed, this effect provides "Preimage resistance" and "hiding" property.*
