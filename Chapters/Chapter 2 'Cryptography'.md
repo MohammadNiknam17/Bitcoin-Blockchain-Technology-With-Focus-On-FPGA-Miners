@@ -66,13 +66,13 @@ r: مقداری تصادفی و مخفی است که در رمزنگاری به 
 
 ### Property 3: Puzzle Friendliness - Target Collision Resistance
 
-[این ویژگی یکمقدار پیچیده‌تر است. اگر شخصی خروجی خاصی مانند]{dir="rtl"} Y [از تابع هش را مدنظر داشته باشد]{dir="rtl"} [یا به عنوان هدف در نظر بگیرد، و اگر قسمتی از ورودی بطرز مناسبی تصادفی انتخاب شده باشد، آنگاه پیدا کردن مقداری دیگر در ورودی که آن را به خروجی مد نظر برساند، بسیار مشکل]{dir="rtl"} [و غیر عملی است.]{dir="rtl"}
+This property is more complicated. If somebody expects a certain output (like Y) from the hash function and consider it as the purpose, and if a part of the input is chosen from satisfying randomness. Then, it is infeasible to find another input that results considered purpose (Y).
 
 > **Puzzle friendliness:** A hash function *H* is said to be puzzle friendly if for every possible *n*-bit output value *y*, if *k* is chosen from a distribution with high min-entropy, then it is infeasible to find *x* such that *H*(*k* ‖ *x*) = *y* in time significantly less than $2^{n}$.
 
-[ویژگی]{dir="rtl"} Puzzle Friendly [را میتوان اینگونه نیز توضیح داد که یک پازل خوب نباید به سرعت حل شود و مسیر میانبری برای پیدا کردن قطعات نباشد و هیچ راهی بجز جستجو تصادفی تک‌تک قطعات برای یافتن قطعه مناسب نباشد. به همین ترتیب در تابع هش مناسب، چک کردن ورودی ها برای رسیدن به خروجی خاص باید زمانبر باشد و همچنین نتوان هیچ استراتژی و یا الگوریتم میانبر دیگری که از چک کردن تصادفی تک تک ورودی ها بهینه تر باشد، یافت. و نتیجتا در شرایطی که تعداد ورودی ها بسیار زیاد است عملا نتوان ورودی]{dir="rtl"} X[که خروجی خاص]{dir="rtl"} Y[را نتیجه دهد پیدا کرد.]{dir="rtl"}
+A good puzzle shouldn't have to be solved fast. And there is no shortcut to solve the puzzle, but randomly looking for pieces one by one, to find the right piece. As the same way, for an appropriate hash function, it should be time and energy consuming to check inputs to find the one which reaches the certain output. Also, no other shortcut strategy or algorithm can be found that is more efficient than randomly checking each input. As a result, in the situation that the number of inputs is very large, it is practically impossible to find the input X that results in a certain output Y.
 
-[در مورد رابطه ویژگی اول و سوم می توان گفت در صورتی که خاصیت اول  صدق کند، خاصیت سوم نیز صادق است. توجه شود که ویژگی سوم، با ویژگی دوم گفته شده، یعنی \"برخورد ناپذیری\"، تفاوت دارد.]{dir="rtl"} [اینکه بتوان برای یک ورودی و خروجی خاص مدنظر مانند]{dir="rtl"} X [و]{dir="rtl"} H(X)[، ورودی دیگری]{dir="rtl"} X\'[، یافت که هش آن]{dir="rtl"} H(X\')[=]{dir="rtl"}H(X) [باشد، کافیست تا ویژگی سوم نقض شود. در ویژگی اول گفته میشود که که تابع هش باید به گونه ای باشد که عملا نتوان هیچ جفت ورودی و خروجی تصادفی را یافت که ورودی ها یکسان نباشند اما خروجی یکسان نتیجه داده باشند.]{dir="rtl"}
+About the relation between Property 1 (Collision Resistance) and Property 3 (Puzzle Friendliness), It can be said that: If the first property is hold by a hash function, then the third property is also true. Note that the third property is different from the first property. For the considered certain input and output (such as x and h (x)), to be able to find another input(x') whose hash is h (x') = h (x), is enough to break the third property. While the first property states that the hash function should be such that practically no random pairs of input and output can be found where the inputs are different but the function results the same output.
 
 [در تعمیم کاربردی مفهوم ویژگی سوم; تابع هش با]{dir="rtl"} n [بیت خروجی، که هر یک از ]{dir="rtl"}$2^{n}$ [مقدار را می‌تواند داشته باشد، را در نظر بگیرید، برای حل این پازل نیاز به پیدا کردن ورودی داریم که خروجی را در مجموعه]{dir="rtl"} Y [(می توان آن را انتخاب کرد و در نظر گرفت)که عملاً بسیار کوچکتر از مجموعه کل خروجی ها است، قرار دهد. اندازه مجموعه]{dir="rtl"} Y[  تعیین کننده میزان سختی پازل ما است اگر مجموعه]{dir="rtl"} Y [شامل همه رشته های]{dir="rtl"} n [بیتی  باشد( یعنی همه خروجی‌ها قابل قبول اند) آنگاه حل پازل  ساده و بدیهی است و در حالتی که مجموعه]{dir="rtl"} Y[  فقط شامل  یک مقدار باشد( یعنی فقط یک خروجی قابل قبول است) است آنگاه  حل پازل در سخت ترین حالت می باشد. کاربرد این مفهوم و قابلیت  تعیین سختی پازل در مباحث ماینینگ نقش مهمی را دارد که در ادامه خواهیم دید.]{dir="rtl"}
 
@@ -95,8 +95,7 @@ Figure 4 - SHA‐256 Hash Function (simplified). SHA‐256 uses the Merkle‐Dam
 #### Compression Function - One-Way Function
 
 **one-way compression function** is a function that transforms and mixestwo fixed length inputs and produces a single fixed length output of the same size as one of the inputs. This can also be seen as that the compression function transforms one large fixed-length input into a shorter, fixed-length output. The transformation is "one-way", meaning that it is difficult given a particular output to compute inputs which compress to that output. One-way compression functions are not related to conventional data compression algorithms, which instead can be inverted exactly (lossless compression) or approximately (lossy compression) to the original data.
-The mixing is done in such a way that full ""avalanche effect[^1]" is achieved.
-
+The mixing is done in such a way that full "avalanche effect[^1]" is achieved.
 
 #### Initialization Vector (IV), (Initial Hash Value)
 
