@@ -38,6 +38,6 @@ A Birthday Attack exploits the mathematical insight, which we get from birthday 
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
-[^1]: *This is an approximation method. For accurate calculation replace N=365 by N=number of possible hash outputs (for instance SHA-256: N=$2^{256}$ ) and do the calculation explained before. Because the exact formula is mathematically heavy for very large number of hash outputs, $√N$ method is the common approximation used in cryptographic realm, that gives fast estimation for the value of K (i.e. how many hash outputs we need to generate before there's a good chance of a collision, and so how much the crypto-system is collision resistant in comparison.)*
+[^1]: *This is an approximation method. For accurate calculation replace N=365 by N=number of possible hash outputs (for instance SHA-256: $N=2^{256}$ ) and do the calculation explained before. Because the exact formula is mathematically heavy for very large number of hash outputs, $√N$ method is the common approximation used in cryptographic realm, that gives fast estimation for the value of K (i.e. how many hash outputs we need to generate before there's a good chance of a collision, and so how much the crypto-system is collision resistant in comparison.)*
 
 
