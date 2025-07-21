@@ -249,8 +249,8 @@ Figure 14 - Conversion from private key to Bitcoin Address
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
-[^1]: **Brute-force attack** tries to find a collision by testing every possible input - by trial and error - until it finds two that match in hash results. in other words, find the original input that produced a known hash (called a preimage attack). It takes 2ⁿ attempts for an n-bit hash. After that, in 2ⁿ+1 attempt, collision is guaranteed.
+[^1]: ***Brute-force attack** tries to find a collision by testing every possible input - by trial and error - until it finds two that match in hash results. in other words, find the original input that produced a known hash (called a preimage attack). It takes 2ⁿ attempts for an n-bit hash. After that, in 2ⁿ+1 attempt, collision is guaranteed.*
 
-[^2]: The fact that we can find a collision by only examining roughly the square root of the number of possible outputs results from a phenomenon in probability known as the birthday paradox. For further elaboration check [Appendices](https://github.com/MohammadNiknam17).
+[^2]: *The fact that we can find a collision by only examining roughly the square root of the number of possible outputs results from a phenomenon in probability known as the birthday paradox. For further elaboration check [Appendices](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/7%20Appendices.md).*
 
 [^3]: *Avalanche effect, is a term associated with a specific behavior of mathematical cryptographic functions. Which is: all the bits of function's output depend on every bit of input. In other word, A slight change in input (even change in one bit) should result a significant random change in output. Indeed, this effect provides "Preimage resistance" and "hiding" property.*

@@ -30,7 +30,7 @@ Thus, one strategy for smaller miners may be to try to pioneer new altcoins whic
 
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
-[^1]: Consisting of large mining groups blasting away hillsides with water
+[^1]: *Consisting of large mining groups blasting away hillsides with water*
 
 [^2]: *Altcoins are alternatives to the cryptocurrency king, Bitcoin (BTC). These coins differentiate themselves from Bitcoin by extending their capabilities and plugging their shortcomings.*
 
