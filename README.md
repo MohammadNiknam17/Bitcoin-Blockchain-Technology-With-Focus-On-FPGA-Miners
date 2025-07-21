@@ -83,7 +83,8 @@ Cryptocurrency, Bitcoin, FPGA, Cryptography, Hash function, SHA256, Blockchain, 
         Professional mining
         Mining hardware evolution: Similarities to gold mining
         A look to the future - The cycle repeats itself
-
+#### [APPENDICES](https://github.com/MohammadNiknam17/Bitcoin-Blockchain-Technology-With-Focus-On-FPGA-Miners/blob/main/Chapters/7%20Appendices.md)
+    A1-the Birthday paradox problem
 
 ---
 
