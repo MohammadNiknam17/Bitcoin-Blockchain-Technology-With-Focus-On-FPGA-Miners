@@ -86,7 +86,7 @@ Each Bitcoin miner independently computes the difficulty and will only accept bl
 
 Notice that the computation that miners have to do is very difficult. In this section, we'll discuss why it is so computationally difficult and take a look at the hardware that miners use to perform this computation.
 
-The core of the difficult computation miners are working on is the SHA‐256 hash function. We discussed hash functions and properties of those in previous sections. SHA‐256 is a general-purpose cryptographic hash function that's part of a bigger family of functions that was standardized in 2001 (SHA stands for Secure Hash Algorithm). SHA‐256 was a reasonable choice as this was strongest cryptographic hash function available at the time when Bitcoin was designed. It is possible that it will become less secure over the lifetime of Bitcoin, but for now it remains secure.[^1]
+The core of the difficult computation which miners are working on is the SHA‐256 hash function. We discussed hash functions and properties of those in previous sections. SHA‐256 is a general-purpose cryptographic hash function that's part of a bigger family of functions that was standardized in 2001 (SHA stands for Secure Hash Algorithm). SHA‐256 was a reasonable choice as this was strongest cryptographic hash function available at the time when Bitcoin was designed. It is possible that it will become less secure over the lifetime of Bitcoin, but for now it remains secure.[^1]
 
 ### A closer look at SHA‐256
 
