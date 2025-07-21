@@ -19,7 +19,7 @@ The second task is a bit more complicated and is solved through what I consider 
 ---
 By [Mohammad Niknam](https://github.com/MohammadNiknam17)
 
-[^1]: *This phrase is come from title of original bitcoin whitepaper by Nakamoto in 2009.*
+[^1]: *This phrase comes from the title of the original Bitcoin whitepaper by Nakamoto in 2009.*
     
 [^2]: *P2P - Peer-to-peer refers to systems that work like an organized collective by allowing each individual to interact directly with the others. In the case of Bitcoin, the network is built in such a way that each user is broadcasting the transactions of other users. And, crucially, no bank is required as a third party.*
     
